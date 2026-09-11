@@ -31,7 +31,7 @@ Early-Warning Emergency Fast-Equip:
 Monitors incoming threats while unarmed with an expanded 14.8-stud predictive sphere. Automatically equips the katana from the Backpack and synchronizes parry packets within the same frame before the enemy closes into lethal range, while preserving natural posture idle animations.
 
 Combat Authority & Attack Freedom:
-Provides unrestricted player attack freedom. Pressing attack keys (Q, E, F, G, R, T, X, B) or Left Mouse Button immediately releases active block to allow fluent chaining and combos. If an incoming enemy strike threatens the player during an attack, Clash Guard instantly cancels the swing and deflects the incoming blow with zero damage taken.
+Provides unrestricted player attack freedom. Pressing keys (Q, E, F, G, R, T, X, B) or Left Mouse Button immediately releases active block to allow fluent chaining and combos. If an incoming enemy strike threatens the player during an attack, Clash Guard instantly cancels the swing and deflects the incoming blow with zero damage taken.
 
 Displace Neutralization:
 Detects incoming unblockable attacks (G-kick / Displace). Instantly drops active block via the unbloc remote and enforces an immunity window to prevent guard-break stuns and knockdowns.
