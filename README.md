@@ -1,6 +1,6 @@
 # Combat Lite
 
-Client-side defensive combat routine for Luau execution environments. Designed for threat perception, dynamic parry windowing, and unblockable neutralization without character kinematics or camera manipulation.
+Client-side defensive combat routine designed specifically for "bug fixes" by captainwoodlegs (Roblox place ID: 100971017807798). Provides automatic parrying, 360-degree radial threat intercept, and guard-break evasion for Luau execution environments without modifying player controls, camera angles, or movement kinematics.
 
 ## Execution
 
@@ -10,33 +10,39 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/Solaysino/Combat-Lite
 
 ## Specifications
 
-- Latency overhead: < 0.2ms per evaluation tick
-- Memory footprint: < 450 KB
-- Network footprint: Event-driven, zero remote polling
-- Control interference: None (camera, orientation, velocity untouched)
-- GUI dependency: None (system notifications only)
+- Target Game: bug fixes by captainwoodlegs
+- Place ID: 100971017807798
+- URL: https://www.roblox.com/games/100971017807798/bug-fixes
+- Latency Overhead: < 0.2ms per evaluation tick
+- Memory Footprint: < 500 KB
+- Protection Coverage: Full 360-degree radial sphere (front, sides, back, tip)
+- Control Interference: None (camera, orientation, and velocity are untouched)
+- GUI Dependency: None (native system notifications only)
 
 ## Features
 
-Threat Perception:
-Monitors Animator.AnimationPlayed and active playback tracks within 10.5 studs. Resolves asset IDs against internal tables of validated attack signatures. Looped tracks, locomotive states, and idle/clean actions are filtered to eliminate false positives.
+Omnidirectional Threat Perception:
+Monitors Animator.AnimationPlayed and server weapon states within striking distance (9.2 studs standard, 10.2 studs for lunges, dynamically scaling up to 11.8 studs based on closing velocity). Protects against attacks from all angles including backstabs, flank swings, diagonal lunges, and spin attacks. Locomotive animations (walk, run, jump, fall) and stance idles are strictly filtered out to prevent false triggers.
+
+Per-Strike Parry Refresh:
+Dispatches verified block signals on every incoming attack within multi-hit combos, ensuring continuous protection without guard drops or combo bleed-through.
 
 Displace Neutralization:
-Intercepts unblockable strike signatures. Enforces immediate guard termination via unbloc remote and applies a 0.70s immunity window to prevent guard-break stuns.
+Detects incoming unblockable attacks (G-kick / Displace). Instantly terminates active block via the unbloc remote and enforces an immunity window to prevent guard-break stuns and knockdowns.
 
-Anti-Combo Sustain:
-Heartbeat evaluation loop dynamically extends parry duration across rapid strike chains without redundant remote invocations.
+Emergency Fast-Equip:
+Detects incoming attacks while unarmed, automatically equips the katana from the Backpack, and initiates block within the same frame while preserving natural stance idle animations.
 
-Emergency Equipment Retrieval:
-Scans Backpack and proximate workspace drops when threats are detected while unequipped. Equips weapon and initializes guard while preserving local stance idle priority tracks.
+Post-Combat Sheathing:
+Allows weapons to be sheathed or stored back into the Backpack after combat without unwanted re-equipping.
 
 ## Controls
 
-Keybind: V (Toggles routine between ENABLED and DISABLED)
+Toggle Key: V (Switches defense between ACTIVE and DISABLED with on-screen confirmation)
 
 ## Architecture
 
-Production build utilizes monolithic array encapsulation, Base64 byte reconstruction, and rolling XOR keystream evaluation. Debug symbols, comments, and plaintext remote identifiers are stripped.
+Production build runs through an automated packaging pipeline with Base64 byte reconstruction, rolling XOR keystream evaluation, and dead-code elimination. Debug symbols, plaintext remotes, and comments are stripped.
 
 ## License
 
